@@ -51,7 +51,7 @@
     </div>
 
     <div class="text-center">
-      <a href="{{ route('blog.index') }}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-200 text-sm font-medium transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-900 hover:scale-[1.03] active:scale-[0.98]">
+      <a href="{{ route('blog.index') }}" wire:navigate class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-200 text-sm font-medium transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-900 hover:scale-[1.03] active:scale-[0.98]">
         View all posts
       </a>
     </div>

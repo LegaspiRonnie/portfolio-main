@@ -5,7 +5,7 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
 
       <div class="md:col-span-2">
-        <a href="{{ route('home') }}" class="flex items-center gap-1.5 font-semibold text-lg tracking-tight text-gray-900 dark:text-white">
+        <a href="{{ route('home') }}" wire:navigate class="flex items-center gap-1.5 font-semibold text-lg tracking-tight text-gray-900 dark:text-white">
           <span class="text-blue-600 dark:text-blue-400 font-mono">&lt;/&gt;</span>
           <span>Ronnie<span class="text-blue-700 dark:text-blue-500">.dev</span></span>
         </a>
@@ -18,12 +18,12 @@
       <div>
         <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">Navigate</h3>
         <ul class="space-y-2.5 text-sm text-gray-600 dark:text-gray-400">
-          <li><a href="{{ route('home') }}#about" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">About</a></li>
-          <li><a href="{{ route('home') }}#projects" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Projects</a></li>
-          <li><a href="{{ route('gallery') }}" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Gallery</a></li>
-          <li><a href="{{ route('pricing') }}" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Pricing</a></li>
-          <li><a href="{{ route('blog.index') }}" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Blog</a></li>
-          <li><a href="{{ route('home') }}#contact" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Contact</a></li>
+          <li><a href="{{ route('home') }}#about" wire:navigate class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">About</a></li>
+          <li><a href="{{ route('home') }}#projects" wire:navigate class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Projects</a></li>
+          <li><a href="{{ route('gallery') }}" wire:navigate class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Gallery</a></li>
+          <li><a href="{{ route('pricing') }}" wire:navigate class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Pricing</a></li>
+          <li><a href="{{ route('blog.index') }}" wire:navigate class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Blog</a></li>
+          <li><a href="{{ route('home') }}#contact" wire:navigate class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Contact</a></li>
         </ul>
       </div>
 

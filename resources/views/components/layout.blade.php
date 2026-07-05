@@ -30,6 +30,15 @@
         body { font-family: 'Inter', 'IBM Plex Sans', sans-serif; }
         [x-cloak] { display: none !important; }
 
+        a, button, [role="button"] {
+            transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+            transition-duration: 200ms;
+            transition-timing-function: ease-out;
+        }
+
+        main { transition: opacity 0.18s ease; }
+        html.is-navigating main { opacity: 0.45; }
+
         [data-reveal] {
             opacity: 0;
             transform: translateY(24px);
@@ -63,6 +72,7 @@
 <body class="bg-white dark:bg-gray-950 transition-colors duration-300">
 
     <x-ui.page-loader />
+    <x-ui.nav-loader />
     <x-ui.toast-container />
     <x-ui.confirm-dialog />
 
@@ -82,21 +92,6 @@
     <livewire:feedback-widget />
     <livewire:purchase-interest />
     <livewire:ai-chat-support />
-
-    <script>
-        (function () {
-            const revealEls = document.querySelectorAll('[data-reveal]');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15 });
-            revealEls.forEach(el => observer.observe(el));
-        })();
-    </script>
 
     @livewireScripts
 </body>

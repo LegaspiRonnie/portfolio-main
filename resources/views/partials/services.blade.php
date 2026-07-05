@@ -58,7 +58,7 @@
     </div>
 
     <div class="mt-8 text-center">
-      <a href="{{ route('pricing') }}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-sm font-medium transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]">
+      <a href="{{ route('pricing') }}" wire:navigate class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-sm font-medium transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]">
         See pricing &amp; packages
         <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

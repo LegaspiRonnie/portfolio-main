@@ -3,7 +3,7 @@
     <div class="max-w-6xl mx-auto px-6 lg:px-8 py-3">
       <ol class="flex items-center flex-wrap gap-2 text-sm">
         <li class="flex items-center gap-2">
-          <a href="{{ route('home') }}" class="text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Home</a>
+          <a href="{{ route('home') }}" wire:navigate class="text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Home</a>
           <svg class="w-3.5 h-3.5 text-gray-300 dark:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
           </svg>
@@ -23,7 +23,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
         @forelse ($posts as $post)
-          <a href="{{ route('blog.show', $post->slug) }}" class="group bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gray-200/60 dark:hover:shadow-none hover:border-blue-200 dark:hover:border-blue-900">
+          <a href="{{ route('blog.show', $post->slug) }}" wire:navigate class="group bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gray-200/60 dark:hover:shadow-none hover:border-blue-200 dark:hover:border-blue-900">
             <div class="h-40 overflow-hidden">
               @if ($post->cover_image_url)
                 <img src="{{ $post->cover_image_url }}" alt="{{ $post->title }}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">

@@ -6,7 +6,7 @@
         <p class="text-sm font-mono text-blue-700 dark:text-blue-400 mb-2">[ projects ]</p>
         <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">Selected work</h2>
       </div>
-      <a href="{{ route('gallery') }}" class="inline-flex items-center gap-1.5 text-sm font-medium text-blue-700 dark:text-blue-400 hover:gap-2.5 transition-all duration-200">
+      <a href="{{ route('gallery') }}" wire:navigate class="inline-flex items-center gap-1.5 text-sm font-medium text-blue-700 dark:text-blue-400 hover:gap-2.5 transition-all duration-200">
         View full gallery
         <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

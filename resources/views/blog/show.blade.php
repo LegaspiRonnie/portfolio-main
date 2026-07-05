@@ -3,13 +3,13 @@
     <div class="max-w-6xl mx-auto px-6 lg:px-8 py-3">
       <ol class="flex items-center flex-wrap gap-2 text-sm">
         <li class="flex items-center gap-2">
-          <a href="{{ route('home') }}" class="text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Home</a>
+          <a href="{{ route('home') }}" wire:navigate class="text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Home</a>
           <svg class="w-3.5 h-3.5 text-gray-300 dark:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
           </svg>
         </li>
         <li class="flex items-center gap-2">
-          <a href="{{ route('blog.index') }}" class="text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Blog</a>
+          <a href="{{ route('blog.index') }}" wire:navigate class="text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors">Blog</a>
           <svg class="w-3.5 h-3.5 text-gray-300 dark:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
           </svg>
@@ -63,7 +63,7 @@
           <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-5">More posts</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             @foreach ($related as $item)
-              <a href="{{ route('blog.show', $item->slug) }}" class="group block bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-gray-200/60 dark:hover:shadow-none hover:border-blue-200 dark:hover:border-blue-900">
+              <a href="{{ route('blog.show', $item->slug) }}" wire:navigate class="group block bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-gray-200/60 dark:hover:shadow-none hover:border-blue-200 dark:hover:border-blue-900">
                 <h3 class="font-medium text-gray-900 dark:text-white mb-1.5 group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">{{ $item->title }}</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{{ Illuminate\Support\Str::limit($item->excerpt, 90) }}</p>
               </a>
