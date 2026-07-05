@@ -58,15 +58,49 @@
                         </div>
                     </div>
                 @endforeach
+
+                <div wire:loading.flex wire:target="send, ask" class="justify-start">
+                    <div class="max-w-[85%] rounded-lg rounded-bl-none bg-gray-100 dark:bg-gray-800 px-3.5 py-3 inline-flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-400 dark:bg-gray-500 animate-bounce" style="animation-delay:0ms"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-400 dark:bg-gray-500 animate-bounce" style="animation-delay:150ms"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-400 dark:bg-gray-500 animate-bounce" style="animation-delay:300ms"></span>
+                    </div>
+                </div>
             </div>
 
-            <div class="border-t border-gray-200 dark:border-gray-800 px-4 py-3 space-y-2.5">
-                <div class="flex flex-wrap gap-1.5">
+            <div class="border-t border-gray-200 dark:border-gray-800 px-4 py-3 space-y-2.5" x-data="{ showSuggestions: true }">
+                <div class="flex items-center justify-between">
+                    <p class="text-xs font-medium text-gray-400 dark:text-gray-500">Suggested questions</p>
+                    <button
+                        type="button"
+                        @click="showSuggestions = !showSuggestions"
+                        :aria-expanded="showSuggestions"
+                        aria-label="Toggle suggested questions"
+                        class="p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                    >
+                        <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="showSuggestions ? '' : '-rotate-180'" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div
+                    x-show="showSuggestions"
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 -translate-y-1"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    class="flex flex-wrap gap-1.5"
+                >
                     @foreach ($suggestions as $key => $topic)
                         <button
                             type="button"
                             wire:click="ask('{{ $key }}')"
-                            class="px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
+                            wire:loading.attr="disabled"
+                            wire:target="send, ask"
+                            class="px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors disabled:opacity-60"
                         >
                             {{ $topic['question'] }}
                         </button>
@@ -77,13 +111,17 @@
                     <input
                         type="text"
                         wire:model="draft"
+                        wire:loading.attr="disabled"
+                        wire:target="send, ask"
                         placeholder="Type a question..."
-                        class="flex-1 px-3 py-2 text-sm rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                        class="flex-1 px-3 py-2 text-sm rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors disabled:opacity-60"
                     >
                     <button
                         type="submit"
                         aria-label="Send"
-                        class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-blue-700 hover:bg-blue-800 text-white transition-colors"
+                        wire:loading.attr="disabled"
+                        wire:target="send, ask"
+                        class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-blue-700 hover:bg-blue-800 text-white transition-colors disabled:opacity-60"
                     >
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.769 59.769 0 0121.485 12 59.768 59.768 0 013.27 20.876L5.999 12zm0 0h7.5"/>

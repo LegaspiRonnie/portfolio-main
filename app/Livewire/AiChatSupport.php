@@ -58,6 +58,7 @@ class AiChatSupport extends Component
 
         $topic = $topics[$topicKey];
         $this->messages[] = ['from' => 'user', 'text' => $topic['question']];
+        $this->simulateThinking();
         $this->messages[] = ['from' => 'bot', 'text' => $topic['answer']];
     }
 
@@ -91,6 +92,8 @@ class AiChatSupport extends Component
             }
         }
 
+        $this->simulateThinking();
+
         $this->messages[] = [
             'from' => 'bot',
             'text' => $bestAnswer ?? "That's a bit outside what I can help with in this quick chat — please reach out through the contact form below and I'll get back to you personally!",
@@ -101,6 +104,11 @@ class AiChatSupport extends Component
     {
         $this->messages = [];
         $this->draft = '';
+    }
+
+    private function simulateThinking(): void
+    {
+        usleep(500000);
     }
 
     public function render()

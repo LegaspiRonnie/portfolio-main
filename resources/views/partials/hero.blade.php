@@ -27,8 +27,15 @@
         <div class="absolute inset-0 rounded-full bg-blue-500/20 dark:bg-blue-400/20 blur-2xl animate-pulse"></div>
         <div class="absolute -inset-3 rounded-full border-2 border-blue-100 dark:border-blue-900/60 animate-pulse"></div>
 
+        @php
+          $heroPhotoPath = 'images/ronnie-legaspi/profile.jpg';
+          $heroPhotoUrl = file_exists(public_path($heroPhotoPath))
+            ? asset($heroPhotoPath)
+            : 'https://ui-avatars.com/api/?name='.urlencode($profile->name ?? 'Ronnie Legaspi').'&size=320&background=1d4ed8&color=ffffff&bold=true';
+        @endphp
+
         <img
-          src="https://ui-avatars.com/api/?name={{ urlencode($profile->name ?? 'Ronnie Legaspi') }}&size=320&background=1d4ed8&color=ffffff&bold=true"
+          src="{{ $heroPhotoUrl }}"
           alt="{{ $profile->name ?? 'Ronnie Legaspi' }}"
           class="relative w-48 h-48 lg:w-72 lg:h-72 rounded-full object-cover border-4 border-white dark:border-gray-900 shadow-xl animate-float-slow"
         >
