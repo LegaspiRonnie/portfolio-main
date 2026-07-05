@@ -24,6 +24,11 @@ class TechIcon
         'git' => 'git',
         'github' => 'github',
         'php' => 'php',
+        'tailwind css' => 'tailwindcss',
+        'tailwindcss' => 'tailwindcss',
+        'livewire' => 'livewire',
+        'alpine.js' => 'alpinedotjs',
+        'filament' => 'filament',
     ];
 
     public static function url(string $name): ?string

@@ -58,8 +58,13 @@
     </style>
 
     @livewireStyles
+    @vite(['resources/js/app.js'])
 </head>
 <body class="bg-white dark:bg-gray-950 transition-colors duration-300">
+
+    <x-ui.page-loader />
+    <x-ui.toast-container />
+    <x-ui.confirm-dialog />
 
     @include('partials.navbar')
 
@@ -70,6 +75,9 @@
     @include('partials.footer')
     @include('partials.back-to-top')
     @include('banners.cookie-consent')
+    <livewire:feedback-widget />
+    <livewire:purchase-interest />
+    <livewire:ai-chat-support />
 
     <script>
         (function () {

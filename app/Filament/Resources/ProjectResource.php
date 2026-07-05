@@ -46,6 +46,24 @@ class ProjectResource extends Resource
                 Forms\Components\TagsInput::make('tags')
                     ->placeholder('Add a tag and press Enter')
                     ->columnSpanFull(),
+                Forms\Components\TextInput::make('image_url')
+                    ->label('Cover image URL')
+                    ->url()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('demo_url')
+                    ->label('Live demo URL')
+                    ->url()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('repo_url')
+                    ->label('Source code URL')
+                    ->url()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('rating')
+                    ->numeric()
+                    ->step(0.1)
+                    ->minValue(0)
+                    ->maxValue(5),
+                Forms\Components\Toggle::make('featured'),
                 Forms\Components\TextInput::make('sort_order')
                     ->helperText('Lower numbers appear first on the public site.')
                     ->required()

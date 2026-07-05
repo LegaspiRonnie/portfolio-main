@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ExperienceEntry;
+use App\Models\Post;
 use App\Models\Profile;
 use App\Models\Project;
 use App\Models\Skill;
@@ -10,6 +11,7 @@ use App\Services\GitHubService;
 use App\Services\LocationService;
 use App\Services\QuoteService;
 use App\Services\WeatherService;
+use App\Support\PortfolioSample;
 
 class PortfolioController extends Controller
 {
@@ -38,7 +40,9 @@ class PortfolioController extends Controller
         $weather = $coordinates ? $this->weatherService->currentWeather($coordinates['lat'], $coordinates['lng']) : null;
         $github = $this->gitHubService->profileFor($profile->github_username);
         $quotes = $this->quoteService->all();
+        $posts = Post::published()->orderByDesc('published_at')->limit(3)->get();
+        $samples = PortfolioSample::all();
 
-        return view('home', compact('profile', 'projects', 'experience', 'skills', 'stats', 'coordinates', 'weather', 'github', 'quotes'));
+        return view('home', compact('profile', 'projects', 'experience', 'skills', 'stats', 'coordinates', 'weather', 'github', 'quotes', 'posts', 'samples'));
     }
 }
