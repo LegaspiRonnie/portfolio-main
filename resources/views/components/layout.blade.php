@@ -26,7 +26,7 @@
         };
     </script>
     <style>
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
         body { font-family: 'Inter', 'IBM Plex Sans', sans-serif; }
         [x-cloak] { display: none !important; }
 
@@ -65,6 +65,10 @@
     <x-ui.page-loader />
     <x-ui.toast-container />
     <x-ui.confirm-dialog />
+
+    @if (session('status'))
+        <div x-data x-init="$store.toast.push({ message: @js(session('status')), type: 'success' })"></div>
+    @endif
 
     @include('partials.navbar')
 

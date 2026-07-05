@@ -7,15 +7,15 @@
         <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Projects shipped</p>
       </div>
       <div data-reveal style="--reveal-delay:80ms">
-        <p class="text-3xl md:text-4xl font-semibold text-blue-700 dark:text-blue-400 counter" data-target="{{ $stats['months'] ?? 5 }}">0</p>
+        <p class="text-3xl md:text-4xl font-semibold text-emerald-600 dark:text-emerald-400 counter" data-target="{{ $stats['months'] ?? 5 }}">0</p>
         <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Months of internship</p>
       </div>
       <div data-reveal style="--reveal-delay:160ms">
-        <p class="text-3xl md:text-4xl font-semibold text-blue-700 dark:text-blue-400 counter" data-target="{{ $stats['technologies'] ?? 8 }}">0</p>
+        <p class="text-3xl md:text-4xl font-semibold text-violet-600 dark:text-violet-400 counter" data-target="{{ $stats['technologies'] ?? 8 }}">0</p>
         <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Technologies used</p>
       </div>
       <div data-reveal style="--reveal-delay:240ms">
-        <p class="text-3xl md:text-4xl font-semibold text-blue-700 dark:text-blue-400 counter" data-target="{{ $stats['percent'] ?? 100 }}">0</p>
+        <p class="text-3xl md:text-4xl font-semibold text-amber-600 dark:text-amber-400 counter" data-target="{{ $stats['percent'] ?? 100 }}">0</p>
         <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">% committed to learning</p>
       </div>
     </div>

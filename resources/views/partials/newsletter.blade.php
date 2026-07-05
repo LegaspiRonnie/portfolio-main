@@ -7,12 +7,6 @@
         New projects, blog posts, and things I'm learning — no spam.
       </p>
 
-      @if (session('status'))
-        <div class="mb-6 max-w-md mx-auto rounded-lg bg-white/95 dark:bg-gray-900/90 border border-white/20 text-emerald-700 dark:text-emerald-400 text-sm font-medium px-4 py-3">
-          {{ session('status') }}
-        </div>
-      @endif
-
       <form action="{{ route('newsletter.subscribe') }}" method="POST" class="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 max-w-md mx-auto">
         @csrf
         <div class="flex-1 text-left">
