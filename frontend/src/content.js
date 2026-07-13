@@ -34,6 +34,10 @@ export { profilePhotoUrl };
 // md5(profile email), precomputed for the gravatar avatar in the About card
 export const gravatarHash = '0a4dee4529aa4bb4adb0f12a116a2124';
 
+// External links must be absolute, or the browser resolves them against this
+// site (e.g. "foo.vercel.app" becomes /foo.vercel.app on the portfolio itself)
+const withProtocol = (url) => (url && !/^https?:\/\//i.test(url) ? `https://${url}` : url);
+
 export const projects = raw.projects
   .filter((project) => !project.is_archived)
   .map((project) => {
@@ -43,6 +47,8 @@ export const projects = raw.projects
     return {
       ...project,
       images,
+      demo_url: withProtocol(project.demo_url),
+      repo_url: withProtocol(project.repo_url),
       image_url: project.image_url ?? (images.length > 0 ? images[0] : null),
     };
   })
