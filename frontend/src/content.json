@@ -39,7 +39,7 @@
             "is_archived": false,
             "image_url": null,
             "images_dir": "images/projects/hrflow",
-            "demo_url": "https://hr-flow-employee-document-workflow.vercel.app",
+            "demo_url": "https://hr-flow-employee-document-workflow.vercel.app/",
             "repo_url": "https://github.com/LegaspiRonnie/HRFlow-Employee-Document-Workflow-Automation-System",
             "role": "Solo full-stack developer — personal project",
             "rating": null,
@@ -135,7 +135,7 @@
             "featured": false
         },
         {
-            "id": 1,
+            "id": 2,
             "title": "Smart Barangay Incident Reporting System",
             "subtitle": "SBIRS — Community Incident Reporting Platform",
             "description": "A web-based incident reporting platform for barangays — residents can file incident reports online while officials track, manage, and respond to cases in real time.",
@@ -144,7 +144,7 @@
                 "MySQL",
                 "JavaScript"
             ],
-            "sort_order": 1,
+            "sort_order": 2,
             "is_archived": false,
             "image_url": null,
             "images_dir": "images/projects/sbirs",
