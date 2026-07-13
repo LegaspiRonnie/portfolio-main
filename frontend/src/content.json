@@ -39,7 +39,7 @@
             "is_archived": false,
             "image_url": null,
             "images_dir": "images/projects/hrflow",
-            "demo_url": "https://hrflow.vercel.app",
+            "demo_url": "hr-flow-employee-document-workflow.vercel.app",
             "repo_url": "https://github.com/LegaspiRonnie/HRFlow-Employee-Document-Workflow-Automation-System",
             "role": "Solo full-stack developer — personal project",
             "rating": null,
