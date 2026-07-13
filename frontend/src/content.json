@@ -108,7 +108,7 @@
             
             "image_url": null,
             "images_dir": "images/projects/jobdocs",
-            "demo_url": "https://jobdocs.vercel.app",
+            "demo_url": "https://jobdocs-roadmap.vercel.app/",
             "repo_url": "https://github.com/LegaspiRonnie/jobdocs-roadmap",
             "role": "Frontend developer — personal project",
             "rating": null,
